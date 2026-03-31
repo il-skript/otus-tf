@@ -38,5 +38,10 @@ resource "yandex_compute_instance" "study" {
     subnet_id = yandex_vpc_subnet.network17.id
     nat       = true
   }
+  metadata = {
+    ssh-keys = "ubuntu:${var.ssh_public_key}"
+   }
 }
+
+
 
